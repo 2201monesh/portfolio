@@ -1,9 +1,18 @@
+import profileImage from "../public/Monesh Goyal Portfolio Image.jpg";
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black flex-col">
       <div className="w-2/5 h-screen">
         <div className="flex items-center mt-18">
-          <div className="w-14 h-14 flex items-center justify-center rounded-full bg-neutral-300 mr-4"></div>
+          <div className="w-14 h-14 flex items-center justify-center rounded-full bg-neutral-300 mr-4">
+            <Image
+              src={profileImage}
+              alt="Monesh Goyal"
+              className="w-14 h-14 rounded-full object-cover"
+            />
+          </div>
           <div className="flex flex-col">
             <p className="">Monesh Goyal</p>
             <p className="text-neutral-600">Software Engineer</p>
