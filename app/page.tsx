@@ -27,37 +27,43 @@ export default function Home() {
           </div> */}
 
           <div className="flex flex-col">
-            <p className="font-medium text-base md:text-lg text-neutral-900 dark:text-neutral-100">Monesh Goyal</p>
+            <p className="font-medium text-base md:text-lg text-neutral-900 dark:text-neutral-100">
+              Monesh Goyal
+            </p>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm md:text-base">
               Frontend Engineer
             </p>
           </div>
           <div>
-            <Link href="/crafts" className="text-neutral-600 dark:text-neutral-400 dark:hover:text-white text-sm md:text-base hover:text-neutral-900 transition">Crafts</Link>
+            <Link
+              href="/crafts"
+              className="text-neutral-600 dark:text-neutral-400 dark:hover:text-white text-sm md:text-base hover:text-neutral-900 transition"
+            >
+              Crafts
+            </Link>
           </div>
         </div>
 
         {/* Description */}
         <div className="mt-10">
           <p className="text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
-            I'm a frontend engineer passionate about crafting scalable,
-            performant web applications using React, Next.js, and Tailwind CSS.
-            I focus heavily on frontend architecture, developer experience, and
-            performance optimization-writing clean, maintainable code that feels
-            great to use.
+            I’m a frontend engineer who enjoys building clean, modern UIs with
+            smooth, minimal animations. I mostly work with React, Next.js,
+            Tailwind CSS, and shadcn/ui, and I love turning well-thought-out
+            designs into fast, polished web experiences.
           </p>
 
           <p className="text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
-            I primarily work with React, Next.js, Tailwind CSS, and shadcn/ui.
-            I'm deeply interested in frontend performance tuning, building
-            developer tools that improve workflows, and designing UI systems
-            with strong consistency and attention to detail.
+            These days, I spend a lot of time using Framer Motion to add subtle
+            motion-micro-interactions, transitions, and animations that make
+            interfaces feel natural without being flashy. I care a lot about
+            visual consistency, performance, and writing code that’s easy to
+            scale and maintain.
           </p>
 
           <p className="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
-            Outside of work, I enjoy exploring new technologies, experimenting
-            with side projects, and continuously growing as a frontend
-            specialist.
+            Outside work, I experiment with side projects, explore new
+            tools, and constantly level up my craft.
           </p>
         </div>
 
