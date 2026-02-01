@@ -1,3 +1,4 @@
+import Link from "next/link";
 import profileImage from "../public/Monesh Goyal Portfolio Image.jpg";
 import Image from "next/image";
 
@@ -16,20 +17,23 @@ export default function Home() {
         "
       >
         {/* Header */}
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-neutral-300 overflow-hidden">
+        <div className="flex justify-between gap-4">
+          {/* <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-neutral-300 overflow-hidden">
             <Image
               src={profileImage}
               alt="Monesh Goyal"
               className="w-full h-full object-cover"
             />
-          </div>
+          </div> */}
 
           <div className="flex flex-col">
             <p className="font-medium text-base md:text-lg">Monesh Goyal</p>
             <p className="text-neutral-600 text-sm md:text-base">
               Frontend Engineer
             </p>
+          </div>
+          <div>
+            <Link href="/crafts" className="text-neutral-600 text-sm md:text-base hover:text-neutral-900 transition">Crafts</Link>
           </div>
         </div>
 
