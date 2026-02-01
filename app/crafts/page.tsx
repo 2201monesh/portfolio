@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
+import { GoArrowUpRight } from "react-icons/go";
 
 const page = () => {
   return (
@@ -15,8 +16,60 @@ const page = () => {
           mx-auto
         "
       >
-        <Link href="/" className="flex items-center"><FaArrowLeft size={14} className="mr-1.5" /> back</Link>
-        <p className="mt-6">Coming soon...</p>
+        <Link
+          href="/"
+          className="group transition inline-flex items-center"
+        >
+          <FaArrowLeft size={14} className="mr-1.5 transition-transform duration-200 ease-out group-hover:-translate-x-1" /> back
+        </Link>
+        <p className="mt-6">
+          some of my recent crafts
+        </p>
+        <div className="mt-6">
+          <p className="mb-3">
+            <Link href="https://x.com/GoyalMonesh/status/2013237322066890844?s=20" className="flex items-center">
+              combo box animation using framer-motion
+              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+            </Link>
+          </p>
+          <p className="mb-3">
+            <Link href="https://x.com/GoyalMonesh/status/2011431087982190724?s=20" className="flex items-center">
+              mac inspired notification
+              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+            </Link>
+          </p>
+          <p className="mb-3">
+            <Link href="https://x.com/GoyalMonesh/status/1999787935961604404?s=20" className="flex items-center">
+              Wallet card animation
+              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+            </Link>
+          </p>
+          <p className="mb-3">
+            <Link href="https://x.com/GoyalMonesh/status/1998619458752098325?s=20" className="flex items-center">
+              Cards with micro animation
+              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+            </Link>
+          </p>
+          <p className="mb-3">
+            <Link href="https://x.com/GoyalMonesh/status/2008916255022145930?s=20" className="flex items-center">
+              draggable list component
+              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+            </Link>
+          </p>
+          <p className="mb-3">
+            <Link href="https://x.com/GoyalMonesh/status/2001876074595258423?s=20" className="flex items-center">
+              custom animation component
+              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+            </Link>
+          </p>
+          <p className="mb-3">
+            <Link href="https://x.com/GoyalMonesh/status/2001702374025650447?s=20" className="flex items-center">
+              text animation using motion
+              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+            </Link>
+          </p>
+        </div>
+        {/* <p className="mt-6 text-neutral-600 dark:text-neutral-400">Coming soon...</p> */}
       </div>
     </div>
   );

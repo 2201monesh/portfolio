@@ -33,7 +33,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <Link href="/crafts" className="text-neutral-600 dark:text-neutral-400 text-sm md:text-base hover:text-neutral-900 transition">Crafts</Link>
+            <Link href="/crafts" className="text-neutral-600 dark:text-neutral-400 dark:hover:text-white text-sm md:text-base hover:text-neutral-900 transition">Crafts</Link>
           </div>
         </div>
 
@@ -73,19 +73,19 @@ export default function Home() {
         <div className="socials mt-8 flex flex-wrap items-center gap-6 text-neutral-600 dark:text-neutral-400">
           <a
             href="https://github.com/2201monesh"
-            className="hover:text-neutral-900 transition"
+            className="hover:text-neutral-900 transition dark:hover:text-white"
           >
             GitHub
           </a>
           <a
             href="https://x.com/GoyalMonesh"
-            className="hover:text-neutral-900 transition"
+            className="hover:text-neutral-900 transition dark:hover:text-white"
           >
             X
           </a>
           <a
             href="https://www.linkedin.com/in/monesh-goyal/"
-            className="hover:text-neutral-900 transition"
+            className="hover:text-neutral-900 transition dark:hover:text-white"
           >
             LinkedIn
           </a>
