@@ -31,7 +31,7 @@ const page = () => {
               className="flex items-center group"
               target="_blank"
             >
-              combo box animation using framer-motion
+              combo box animation using motion
               <GoArrowUpRight
                 className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 size={18}
