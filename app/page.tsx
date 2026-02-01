@@ -27,19 +27,19 @@ export default function Home() {
           </div> */}
 
           <div className="flex flex-col">
-            <p className="font-medium text-base md:text-lg">Monesh Goyal</p>
-            <p className="text-neutral-600 text-sm md:text-base">
+            <p className="font-medium text-base md:text-lg text-neutral-900 dark:text-neutral-100">Monesh Goyal</p>
+            <p className="text-neutral-600 dark:text-neutral-400 text-sm md:text-base">
               Frontend Engineer
             </p>
           </div>
           <div>
-            <Link href="/crafts" className="text-neutral-600 text-sm md:text-base hover:text-neutral-900 transition">Crafts</Link>
+            <Link href="/crafts" className="text-neutral-600 dark:text-neutral-400 text-sm md:text-base hover:text-neutral-900 transition">Crafts</Link>
           </div>
         </div>
 
         {/* Description */}
         <div className="mt-10">
-          <p className="text-neutral-600 mb-4 leading-relaxed">
+          <p className="text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
             I'm a frontend engineer passionate about crafting scalable,
             performant web applications using React, Next.js, and Tailwind CSS.
             I focus heavily on frontend architecture, developer experience, and
@@ -47,14 +47,14 @@ export default function Home() {
             great to use.
           </p>
 
-          <p className="text-neutral-600 mb-4 leading-relaxed">
+          <p className="text-neutral-600 dark:text-neutral-400 mb-4 leading-relaxed">
             I primarily work with React, Next.js, Tailwind CSS, and shadcn/ui.
             I'm deeply interested in frontend performance tuning, building
             developer tools that improve workflows, and designing UI systems
             with strong consistency and attention to detail.
           </p>
 
-          <p className="text-neutral-600 mb-6 leading-relaxed">
+          <p className="text-neutral-600 dark:text-neutral-400 mb-6 leading-relaxed">
             Outside of work, I enjoy exploring new technologies, experimenting
             with side projects, and continuously growing as a frontend
             specialist.
@@ -62,15 +62,15 @@ export default function Home() {
         </div>
 
         {/* Email */}
-        <div className="mt-8 text-neutral-600 break-words">
+        <div className="mt-8 text-neutral-600 dark:text-neutral-400 break-words">
           for collaborations, reach me at{" "}
           <span className="underline underline-offset-4">
-            goyalmonesh2201@gmail.com
+            moneshgoyal.work@gmail.com
           </span>
         </div>
 
         {/* Socials */}
-        <div className="socials mt-8 flex flex-wrap items-center gap-6 text-neutral-600">
+        <div className="socials mt-8 flex flex-wrap items-center gap-6 text-neutral-600 dark:text-neutral-400">
           <a
             href="https://github.com/2201monesh"
             className="hover:text-neutral-900 transition"
