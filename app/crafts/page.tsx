@@ -16,56 +16,104 @@ const page = () => {
           mx-auto
         "
       >
-        <Link
-          href="/"
-          className="group transition inline-flex items-center"
-        >
-          <FaArrowLeft size={14} className="mr-1.5 transition-transform duration-200 ease-out group-hover:-translate-x-1" /> back
+        <Link href="/" className="group transition inline-flex items-center">
+          <FaArrowLeft
+            size={14}
+            className="mr-1.5 transition-transform duration-200 ease-out group-hover:-translate-x-1"
+          />{" "}
+          back
         </Link>
-        <p className="mt-6">
-          some of my recent crafts
-        </p>
+        <p className="mt-6">some of my recent crafts</p>
         <div className="mt-6">
           <p className="mb-3">
-            <Link href="https://x.com/GoyalMonesh/status/2013237322066890844?s=20" className="flex items-center">
+            <Link
+              href="https://x.com/GoyalMonesh/status/2013237322066890844?s=20"
+              className="flex items-center group"
+              target="_blank"
+            >
               combo box animation using framer-motion
-              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+              <GoArrowUpRight
+                className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                size={18}
+              />
             </Link>
           </p>
           <p className="mb-3">
-            <Link href="https://x.com/GoyalMonesh/status/2011431087982190724?s=20" className="flex items-center">
+            <Link
+              href="https://x.com/GoyalMonesh/status/2011431087982190724?s=20"
+              className="flex items-center group"
+              target="_blank"
+            >
               mac inspired notification
-              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+              <GoArrowUpRight
+                className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                size={18}
+              />
             </Link>
           </p>
           <p className="mb-3">
-            <Link href="https://x.com/GoyalMonesh/status/1999787935961604404?s=20" className="flex items-center">
+            <Link
+              href="https://x.com/GoyalMonesh/status/1999787935961604404?s=20"
+              className="flex items-center group"
+              target="_blank"
+            >
               Wallet card animation
-              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+              <GoArrowUpRight
+                className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                size={18}
+              />
             </Link>
           </p>
           <p className="mb-3">
-            <Link href="https://x.com/GoyalMonesh/status/1998619458752098325?s=20" className="flex items-center">
+            <Link
+              href="https://x.com/GoyalMonesh/status/1998619458752098325?s=20"
+              className="flex items-center group"
+              target="_blank"
+            >
               Cards with micro animation
-              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+              <GoArrowUpRight
+                className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                size={18}
+              />
             </Link>
           </p>
           <p className="mb-3">
-            <Link href="https://x.com/GoyalMonesh/status/2008916255022145930?s=20" className="flex items-center">
+            <Link
+              href="https://x.com/GoyalMonesh/status/2008916255022145930?s=20"
+              className="flex items-center group"
+              target="_blank"
+            >
               draggable list component
-              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+              <GoArrowUpRight
+                className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                size={18}
+              />
             </Link>
           </p>
           <p className="mb-3">
-            <Link href="https://x.com/GoyalMonesh/status/2001876074595258423?s=20" className="flex items-center">
+            <Link
+              href="https://x.com/GoyalMonesh/status/2001876074595258423?s=20"
+              className="flex items-center group"
+              target="_blank"
+            >
               custom animation component
-              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+              <GoArrowUpRight
+                className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                size={18}
+              />
             </Link>
           </p>
           <p className="mb-3">
-            <Link href="https://x.com/GoyalMonesh/status/2001702374025650447?s=20" className="flex items-center">
+            <Link
+              href="https://x.com/GoyalMonesh/status/2001702374025650447?s=20"
+              className="flex items-center group"
+              target="_blank"
+            >
               text animation using motion
-              <GoArrowUpRight className="text-neutral-500 ml-2" size={18} />
+              <GoArrowUpRight
+                className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                size={18}
+              />
             </Link>
           </p>
         </div>
