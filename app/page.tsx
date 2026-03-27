@@ -66,7 +66,7 @@ export default function Home() {
             GitHub
           </a>
           <a
-            href="https://x.com/GoyalMonesh"
+            href="https://x.com/moneshgoyal"
             className="relative hover:text-neutral-900 transition px-2 py-0.5 rounded"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
