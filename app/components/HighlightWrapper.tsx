@@ -48,7 +48,7 @@ export function HighlightWrapper({ children }: { children: React.ReactNode }) {
           {hl && (
             <motion.div
               key="hl"
-              className="absolute bg-neutral-200/50 ring-1 ring-neutral-300 pointer-events-none"
+              className="absolute bg-slate-100/70 ring-1 ring-slate-300 pointer-events-none"
               initial={{ opacity: 0, top: hl.top, left: hl.left - 8, width: hl.width + 16, height: hl.height }}
               animate={{ opacity: 1, top: hl.top, left: hl.left - 8, width: hl.width + 16, height: hl.height }}
               exit={{ opacity: 0 }}
