@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import HeaderNav from "./components/HeaderNav";
+import { HighlightWrapper } from "./components/HighlightWrapper";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -29,8 +30,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-50 font-sans`}
       >
-        <HeaderNav />
-        {children}
+        <HighlightWrapper>
+          <HeaderNav />
+          {children}
+        </HighlightWrapper>
         <Analytics />
       </body>
     </html>
