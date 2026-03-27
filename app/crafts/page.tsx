@@ -72,10 +72,10 @@ const Page = () => {
               >
                 <span className="flex items-center">
                   {craft.label}
-                  <GoArrowUpRight
+                  {/* <GoArrowUpRight
                     className="text-neutral-500 ml-2 transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 shrink-0"
                     size={18}
-                  />
+                  /> */}
                 </span>
                 <span className="text-neutral-400 text-xs shrink-0 ml-4">{craft.date}</span>
               </Link>
