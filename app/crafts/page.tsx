@@ -6,6 +6,11 @@ import { useHoverHighlight } from "../components/HighlightWrapper";
 
 const crafts = [
   {
+    label: "discord animation",
+    href: "https://x.com/moneshgoyal/status/2037145179376042495?s=20",
+    date: "Mar 28, 2026",
+  },
+  {
     label: "combo box animation using motion",
     href: "https://x.com/GoyalMonesh/status/2013237322066890844?s=20",
     date: "Jan 19, 2026",
@@ -46,22 +51,25 @@ const Page = () => {
   const { onEnter, onLeave } = useHoverHighlight();
 
   return (
-    <div className="flex bg-zinc-50 font-sans">
+    <div className="flex bg-white font-sans">
       <div className="w-full px-4 sm:px-6 pb-12 md:w-3/5 lg:w-2/5 max-w-xl mx-auto">
         <div className="mt-10">
           <p
-            className="relative text-neutral-600 text-sm md:text-base px-2 py-1 rounded cursor-default"
+            className="relative inline-block text-neutral-400 text-xs tracking-widest uppercase px-2 py-1 rounded cursor-default"
+            data-label="section heading"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >
             some of my recent crafts
           </p>
+          <hr className="mt-3 border-neutral-200" />
         </div>
         <div className="mt-6">
           {crafts.map((craft) => (
             <p
               key={craft.href}
               className="relative mb-3 px-2 py-1 rounded"
+              data-label="craft link"
               onMouseEnter={onEnter}
               onMouseLeave={onLeave}
             >

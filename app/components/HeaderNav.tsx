@@ -14,6 +14,7 @@ export default function HeaderNav() {
         <Link href="/" className="flex flex-col">
           <div
             className="relative font-medium text-base md:text-lg text-neutral-900 px-2 py-0.5 rounded"
+            data-label="name"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >
@@ -21,6 +22,7 @@ export default function HeaderNav() {
           </div>
           <p
             className="relative text-neutral-600 text-sm md:text-base px-2 py-0.5 rounded"
+            data-label="title"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >
@@ -31,6 +33,7 @@ export default function HeaderNav() {
           <Link
             href="/crafts"
             className="relative self-start text-neutral-600 text-sm md:text-base hover:text-neutral-900 transition rounded px-2 py-0.5"
+            data-label="CTA"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >

@@ -6,12 +6,13 @@ export default function Home() {
   const { onEnter, onLeave } = useHoverHighlight();
 
   return (
-    <div className="flex bg-zinc-50 font-sans">
+    <div className="flex bg-white font-sans">
       <div className="w-full px-4 sm:px-6 pb-12 md:w-3/5 lg:w-2/5 max-w-xl mx-auto">
         {/* Description */}
         <div className="mt-10">
           <p
             className="relative text-neutral-600 mb-4 leading-relaxed px-2 py-1 cursor-default"
+            data-label="about"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >
@@ -23,6 +24,7 @@ export default function Home() {
 
           <p
             className="relative text-neutral-600 mb-4 leading-relaxed px-2 py-1 cursor-default"
+            data-label="about"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >
@@ -35,6 +37,7 @@ export default function Home() {
 
           <p
             className="relative text-neutral-600 mb-6 leading-relaxed px-2 py-1 cursor-default"
+            data-label="about"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >
@@ -46,6 +49,7 @@ export default function Home() {
         {/* Email */}
         <div
           className="relative mt-8 text-neutral-600 break-words px-2 py-1 cursor-default"
+          data-label="email section"
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
         >
@@ -60,6 +64,7 @@ export default function Home() {
           <a
             href="https://github.com/2201monesh"
             className="relative hover:text-neutral-900 transition px-2 py-0.5 rounded"
+            data-label="github"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >
@@ -68,6 +73,7 @@ export default function Home() {
           <a
             href="https://x.com/moneshgoyal"
             className="relative hover:text-neutral-900 transition px-2 py-0.5 rounded"
+            data-label="x"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >
@@ -76,6 +82,7 @@ export default function Home() {
           <a
             href="https://www.linkedin.com/in/monesh-goyal/"
             className="relative hover:text-neutral-900 transition px-2 py-0.5 rounded"
+            data-label="linkedin"
             onMouseEnter={onEnter}
             onMouseLeave={onLeave}
           >

@@ -4,7 +4,7 @@ import { createContext, useContext, useState, useRef, useCallback, useEffect } f
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
-type Highlight = { top: number; left: number; width: number; height: number; tag: string };
+type Highlight = { top: number; left: number; width: number; height: number; tag: string; label: string };
 type CtxType = {
   onEnter: (e: React.MouseEvent<HTMLElement>) => void;
   onLeave: () => void;
@@ -34,6 +34,7 @@ export function HighlightWrapper({ children }: { children: React.ReactNode }) {
       width: er.width,
       height: er.height,
       tag: e.currentTarget.tagName.toLowerCase(),
+      label: (e.currentTarget as HTMLElement).dataset.label ?? "",
     });
   }, []);
 
@@ -54,8 +55,9 @@ export function HighlightWrapper({ children }: { children: React.ReactNode }) {
               exit={{ opacity: 0 }}
               transition={{ ease: "easeOut", duration: 0.15 }}
             >
-              <span className="absolute -top-6 left-0 inline-flex items-center justify-center px-2 py-1 text-xs font-mono bg-blue-100 text-blue-600 leading-none">
-                {hl.tag}
+              <span className="absolute -top-6 left-0 inline-flex items-center gap-1.5 px-2 py-1 text-xs font-mono bg-blue-100 text-blue-600 leading-none">
+                {hl.label && <><span>{hl.label}</span><span className="text-blue-400">·</span></>}
+                <span>{hl.tag}</span>
               </span>
             </motion.div>
           )}
