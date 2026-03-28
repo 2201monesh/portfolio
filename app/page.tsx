@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="flex bg-zinc-50 font-sans">
-      <div className="w-full px-4 sm:px-6 pb-12 md:w-3/5 lg:w-2/5 mx-auto">
+      <div className="w-full px-4 sm:px-6 pb-12 md:w-3/5 lg:w-2/5 max-w-xl mx-auto">
         {/* Description */}
         <div className="mt-10">
           <p

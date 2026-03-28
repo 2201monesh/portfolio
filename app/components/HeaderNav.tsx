@@ -9,7 +9,7 @@ export default function HeaderNav() {
   const { onEnter, onLeave } = useHoverHighlight();
 
   return (
-    <div className="w-full px-4 sm:px-6 pt-10 sm:pt-16 md:w-3/5 lg:w-2/5 mx-auto">
+    <div className="w-full px-4 sm:px-6 pt-10 sm:pt-16 md:w-3/5 lg:w-2/5 max-w-xl mx-auto">
       <div className="flex justify-between gap-4">
         <Link href="/" className="flex flex-col">
           <div
