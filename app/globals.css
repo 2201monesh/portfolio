@@ -13,6 +13,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-inter);
+}
+
+.link-text {
+  @apply cursor-pointer border-b border-dashed border-b-neutral-400;
 }
 
 html,
