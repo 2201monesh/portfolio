@@ -105,6 +105,10 @@ export default function Home() {
   </div>
   <div className="mt-12 space-y-4 select-none">
     <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
+      <a href="https://x.com/moneshgoyal/status/2040771299677778423?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
+        <p className="w-30 text-neutral-400">Apr 5, 2026</p>
+        <p className="">Motion cards component</p>
+      </a>
       <a href="https://x.com/moneshgoyal/status/2037145179376042495?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="w-30 text-neutral-400">Mar 28, 2026</p>
         <p className="">Discord Animation</p>
