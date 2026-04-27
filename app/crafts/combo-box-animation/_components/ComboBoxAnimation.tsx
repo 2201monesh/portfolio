@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { IoIosArrowBack } from "react-icons/io";
 import { GoOrganization } from "react-icons/go";
 import { TbWorldSearch } from "react-icons/tb";
@@ -32,7 +32,7 @@ const ComboBoxAnimation = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [selectedCompany, setSelectedCompany] = useState("");
 
-  const container = {
+  const container: Variants = {
     hidden: { x: -6, opacity: 0 },
     show: {
       x: 0,
@@ -46,7 +46,7 @@ const ComboBoxAnimation = () => {
     },
   };
 
-  const containerList = {
+  const containerList: Variants = {
     hidden: { x: -6, opacity: 0 },
     show: {
       x: 0,
@@ -60,7 +60,7 @@ const ComboBoxAnimation = () => {
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { x: -6, opacity: 0 },
     show: {
       x: 0,
@@ -204,7 +204,7 @@ type CompanyInfoProps = {
   onSelect: () => void;
 };
 
-const itemVariant = {
+const itemVariant: Variants = {
   hidden: { x: -6, opacity: 0 },
   show: {
     x: 0,
