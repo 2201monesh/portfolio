@@ -20,6 +20,63 @@
   @apply cursor-pointer border-b border-dashed border-b-neutral-400;
 }
 
+/* ── Motion cards skeleton animations ─────────────────────────── */
+
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.08; }
+  50%       { opacity: 0.50; }
+}
+.ring-circle {
+  animation-name: ringPulse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes githubGlow {
+  0%, 100% { opacity: 0.10; }
+  50%       { opacity: 0.90; }
+}
+.github-square {
+  border-radius: 2px;
+  animation-name: githubGlow;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes waveFlow {
+  0%   { stroke-dashoffset: 600; }
+  100% { stroke-dashoffset: 0; }
+}
+.wave-line {
+  stroke-dasharray: 600;
+  animation-name: waveFlow;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shootStar {
+  0%   { stroke-dashoffset: 80; opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { stroke-dashoffset: -80; opacity: 0; }
+}
+.shoot-star {
+  stroke-dasharray: 80;
+  animation-name: shootStar;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes scanSweep {
+  0%, 100% { opacity: 0.10; }
+  50%       { opacity: 0.85; }
+}
+.scan-line {
+  animation-name: scanSweep;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 html,
 body {
   height: 100%;
