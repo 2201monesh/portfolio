@@ -7,8 +7,9 @@ import { useHoverHighlight } from "../components/HighlightWrapper";
 const crafts = [
   {
     label: "discord animation",
-    href: "https://x.com/moneshgoyal/status/2037145179376042495?s=20",
+    href: "/crafts/discord-animation",
     date: "Mar 28, 2026",
+    external: false,
   },
   {
     label: "combo box animation using motion",
@@ -76,7 +77,7 @@ const Page = () => {
               <Link
                 href={craft.href}
                 className="flex items-center justify-between group text-neutral-600 hover:text-neutral-900 transition text-sm md:text-base"
-                target="_blank"
+                {...(craft.external !== false && { target: "_blank" })}
               >
                 <span className="flex items-center">
                   {craft.label}
