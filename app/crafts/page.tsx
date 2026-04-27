@@ -13,8 +13,9 @@ const crafts = [
   },
   {
     label: "combo box animation using motion",
-    href: "https://x.com/GoyalMonesh/status/2013237322066890844?s=20",
+    href: "/crafts/combo-box-animation",
     date: "Jan 19, 2026",
+    external: false,
   },
   {
     label: "mac inspired notification",

@@ -32,10 +32,10 @@ export default function Home() {
         <p className="w-30 text-neutral-400">Mar 28, 2026</p>
         <p className="">Discord Animation</p>
       </Link>
-      <a href="https://x.com/moneshgoyal/status/2013237322066890844?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
+      <Link href="/crafts/combo-box-animation" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="w-30 text-neutral-400">Jan 19, 2026</p>
         <p className="">Combobox animation using Motion</p>
-      </a>
+      </Link>
       <a href="https://x.com/moneshgoyal/status/2011431087982190724?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="w-30 text-neutral-400">Jan 14, 2026</p>
         <p className="">MacOs inspired notification</p>
