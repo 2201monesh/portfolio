@@ -6,6 +6,18 @@ import { useHoverHighlight } from "../components/HighlightWrapper";
 
 const crafts = [
   {
+    label: "tab toggling",
+    href: "/crafts/tab-toggling",
+    date: "Jun 3, 2026",
+    external: false,
+  },
+  {
+    label: "progress component",
+    href: "/crafts/progress-component",
+    date: "Apr 29, 2026",
+    external: false,
+  },
+  {
     label: "discord animation",
     href: "/crafts/discord-animation",
     date: "Mar 28, 2026",

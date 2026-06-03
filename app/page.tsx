@@ -20,6 +20,14 @@ export default function Home() {
   </div>
   <div className="mt-12 space-y-4 select-none">
     <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
+      {/* <Link href="/crafts/progress-component" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
+        <p className="w-30 text-neutral-400">Apr 29, 2026</p>
+        <p className="">Progress component</p>
+      </Link> */}
+      <Link href="/crafts/tab-toggling" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
+        <p className="w-30 text-neutral-400">June 2, 2026</p>
+        <p className="">Tab toggling with micro animations</p>
+      </Link>
        <Link href="/crafts/folder-card-animation" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="w-30 text-neutral-400">Apr 14, 2026</p>
         <p className="">Folder card animation</p>

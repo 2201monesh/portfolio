@@ -1,0 +1,344 @@
+'use client'
+
+import React, { useState, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { IoIosArrowDown } from 'react-icons/io'
+import { HiOutlineDotsHorizontal } from "react-icons/hi";
+import { IconMessage, IconRepeat, IconHeart, IconChartBar, IconBookmark, IconUpload, IconRosetteDiscountCheckFilled } from "@tabler/icons-react";
+
+const tabs = ['Bookmarks', 'Videos', 'Articles', 'Likes']
+
+const LikeButton = ({ count, initialLiked = false }: { count: string; initialLiked?: boolean }) => {
+  const [liked, setLiked] = useState(initialLiked)
+  const [clickKey, setClickKey] = useState(0)
+  const [likeCount, setLikeCount] = useState(parseInt(count, 10))
+  const [isHovered, setIsHovered] = useState(false)
+  const [isPressed, setIsPressed] = useState(false)
+
+  const handleClick = () => {
+    const next = !liked
+    setLiked(next)
+    setLikeCount(next ? likeCount + 1 : likeCount - 1)
+    setClickKey(k => k + 1)
+  }
+
+  return (
+    <div className='flex items-center gap-1 cursor-pointer' onClick={handleClick}>
+      <div
+        className='relative flex items-center justify-center'
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => { setIsHovered(false); setIsPressed(false) }}
+        onMouseDown={() => setIsPressed(true)}
+        onMouseUp={() => setIsPressed(false)}
+      >
+        <motion.div
+          animate={{
+            opacity: isHovered ? 1 : 0,
+            backgroundColor: isPressed ? 'rgba(236,72,153,0.22)' : 'rgba(236,72,153,0.12)',
+          }}
+          transition={{ duration: 0.08 }}
+          className='absolute w-7 h-7 rounded-full pointer-events-none'
+        />
+        <motion.div
+          key={`heart-${clickKey}`}
+          animate={liked ? { scale: [1, 1.2, 0.9, 1.05, 1] } : { scale: [1, 0.85, 1] }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
+          className={liked ? 'text-pink-500' : isHovered ? 'text-pink-400' : 'text-neutral-500'}
+        >
+          <IconHeart size={16} stroke={1.5} fill={liked ? 'currentColor' : 'none'} />
+        </motion.div>
+      </div>
+      <span className={`text-xs ${liked ? 'text-pink-500' : 'text-neutral-500'}`}>{likeCount}</span>
+    </div>
+  )
+}
+
+const BookmarkButton = ({ initialBookmarked = false }: { initialBookmarked?: boolean }) => {
+  const [bookmarked, setBookmarked] = useState(initialBookmarked)
+  const [clickKey, setClickKey] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+  const [isPressed, setIsPressed] = useState(false)
+
+  const handleClick = () => {
+    setBookmarked(prev => !prev)
+    setClickKey(k => k + 1)
+  }
+
+  return (
+    <div
+      className='relative flex items-center justify-center cursor-pointer'
+      onClick={handleClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => { setIsHovered(false); setIsPressed(false) }}
+      onMouseDown={() => setIsPressed(true)}
+      onMouseUp={() => setIsPressed(false)}
+    >
+      <motion.div
+        animate={{
+          opacity: isHovered ? 1 : 0,
+          backgroundColor: isPressed ? 'rgba(59,130,246,0.22)' : 'rgba(59,130,246,0.12)',
+        }}
+        transition={{ duration: 0.08 }}
+        className='absolute w-7 h-7 rounded-full pointer-events-none'
+      />
+      <motion.div
+        key={`bookmark-${clickKey}`}
+        animate={bookmarked ? { scale: [1, 1.15, 0.9, 1.05, 1] } : { scale: [1, 0.85, 1] }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className={bookmarked ? 'text-blue-500' : isHovered ? 'text-blue-400' : 'text-neutral-500'}
+      >
+        <IconBookmark size={16} stroke={1.5} fill={bookmarked ? 'currentColor' : 'none'} />
+      </motion.div>
+    </div>
+  )
+}
+
+const TwitterTabsSwitchAnimation = () => {
+  const [active, setActive] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const [slideDir, setSlideDir] = useState<'left' | 'right'>('right')
+  const animTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handleTabChange = (i: number) => {
+    if (i === active) return
+    setSlideDir(i > active ? 'right' : 'left')
+    setActive(i)
+    setIsAnimating(true)
+    if (animTimerRef.current) clearTimeout(animTimerRef.current)
+    animTimerRef.current = setTimeout(() => setIsAnimating(false), 350)
+  }
+
+  return (
+    <div className='w-full h-full flex items-center justify-center bg-[#f6f6f6]'>
+      <div className='flex flex-col h-[400px]'>
+        <div className='flex items-center justify-start w-[350px]'>
+          {tabs.map((tab, i) => (
+            <button
+              key={tab}
+              onClick={() => handleTabChange(i)}
+              className={`relative py-3 px-2 text-sm font-medium transition-colors duration-200 cursor-pointer
+                ${active === i ? 'text-neutral-900 dark:text-neutral-100' : 'text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300'}`}
+            >
+              <span className='relative flex items-center gap-1'>
+                {tab}
+                {tab === 'Bookmarks' && (
+                  <motion.span
+                    animate={{ width: active === i ? 13 : 0 }}
+                    transition={{ duration: 0.2, ease: 'linear' }}
+                    className='overflow-hidden flex items-center'
+                  >
+                    <AnimatePresence>
+                      {active === i && (
+                        <motion.span
+                          key='arrow'
+                          initial={{ x: -14, opacity: 0, scale: 0 }}
+                          animate={{ x: 0, opacity: 1, scale: 1 }}
+                          exit={{ x: -14, opacity: 0, scale: 0 }}
+                          transition={{ duration: 0.2, ease: 'linear' }}
+                          className='flex items-center shrink-0'
+                        >
+                          <IoIosArrowDown size={13} />
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </motion.span>
+                )}
+                {active === i && (
+                  <motion.span
+                    layoutId='underline'
+                    className='absolute -bottom-1 left-0 w-full h-[2px] bg-yellow-400 rounded-full'
+                    transition={{ type: 'tween', ease: 'easeOut', duration: 0.2 }}
+                  />
+                )}
+              </span>
+            </button>
+          ))}
+        </div>
+        <div className='overflow-hidden flex-1 w-[350px] relative'>
+          <motion.div
+            animate={{ opacity: isAnimating && slideDir === 'left' ? 1 : 0 }}
+            transition={{ duration: 0.12 }}
+            className='absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none'
+            style={{ background: 'linear-gradient(to right, #f6f6f6 15%, transparent)' }}
+          />
+          <motion.div
+            animate={{ opacity: isAnimating && slideDir === 'right' ? 1 : 0 }}
+            transition={{ duration: 0.12 }}
+            className='absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none'
+            style={{ background: 'linear-gradient(to left, #f6f6f6 15%, transparent)' }}
+          />
+          <motion.div
+            animate={{ x: active * -350 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className='flex'
+          >
+            {/* Bookmarks panel */}
+            <div className='w-[350px] shrink-0 pt-6'>
+              <div className='flex items-start'>
+                <img src='https://i.pinimg.com/736x/3d/36/c2/3d36c23f2c42fcc5991c5abb80ee579c.jpg' alt='moneshgoyal' className='w-10 h-10 rounded-full mr-4 shrink-0 object-cover bg-neutral-300 dark:bg-neutral-700' />
+                <div className='flex-1'>
+                  <div className='flex justify-between items-center'>
+                    <div className='flex items-center'>
+                      <p className='text-sm mr-1'>Monesh Goyal</p>
+                      <IconRosetteDiscountCheckFilled size={15} className='mr-1 text-blue-500' />
+                      <p className='text-neutral-500 text-xs mr-2'>@moneshgoyal</p>
+                      <p className='text-xs text-neutral-500'>5h</p>
+                    </div>
+                    <HiOutlineDotsHorizontal className='cursor-pointer' />
+                  </div>
+                  <p className='text-[12px] text-neutral-500 mb-2'>Replying to <span className='text-yellow-400'>@benjitaylor</span></p>
+                  <p className='text-sm leading-5 tracking-normal'>Framer Motion makes UI animations feel effortless - just describe the state and let it handle the rest.</p>
+                  <p className='text-sm leading-5 tracking-normal mt-3'>The tab switcher with the sliding underline and arrow reveal is a great example of how small motion details elevate the whole experience.</p>
+                  <p className='text-sm leading-5 tracking-normal mt-3'>Subtle is always better.</p>
+                  <p className='text-sm text-yellow-400 mt-3 cursor-pointer'>show more</p>
+                  <div className='flex items-center justify-between mt-3 text-neutral-500'>
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconMessage size={16} stroke={1.5} />
+                      <span className='text-xs'>8</span>
+                    </div>
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconRepeat size={16} stroke={1.5} />
+                      <span className='text-xs'>7</span>
+                    </div>
+                    <LikeButton count='267' />
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconChartBar size={16} stroke={1.5} />
+                      <span className='text-xs'>12K</span>
+                    </div>
+                    <BookmarkButton initialBookmarked={true} />
+                    <div>
+                      <IconUpload size={16} stroke={1.5} className='cursor-pointer' />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Videos panel */}
+            <div className='w-[350px] shrink-0 pt-6'>
+              <div className='flex items-start'>
+                <img src='https://i.pinimg.com/736x/1f/d0/26/1fd026649d01411791060693175166f9.jpg' alt='leotopez' className='w-10 h-10 rounded-full mr-4 shrink-0 object-cover bg-neutral-300 dark:bg-neutral-700' />
+                <div className='flex-1'>
+                  <div className='flex justify-between items-center'>
+                    <div className='flex items-center'>
+                      <p className='text-sm mr-1'>Leo Topez</p>
+                      <IconRosetteDiscountCheckFilled size={15} className='mr-1 text-blue-500' />
+                      <p className='text-neutral-500 text-xs mr-2'>@leotopez</p>
+                      <p className='text-xs text-neutral-500'>5h</p>
+                    </div>
+                    <HiOutlineDotsHorizontal className='cursor-pointer' />
+                  </div>
+                  <p className='text-[12px] text-neutral-500 mb-2'>Replying to <span className='text-yellow-400'>@yashsehgaldev</span></p>
+                  <p className='text-sm leading-5 tracking-normal'>Finally shipped the 60fps scroll linked scrubber. Here is a 12s screen capture - no cuts, no speed ramp - just the interaction.</p>
+                  <p className='text-sm leading-5 tracking-normal mt-3 text-blue-500'>animations.dev/clips/transitions-v1</p>
+                  <div className='flex items-center justify-between mt-3 text-neutral-500'>
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconMessage size={16} stroke={1.5} />
+                      <span className='text-xs'>14</span>
+                    </div>
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconRepeat size={16} stroke={1.5} />
+                      <span className='text-xs'>49</span>
+                    </div>
+                    <LikeButton count='712' />
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconChartBar size={16} stroke={1.5} />
+                      <span className='text-xs'>36K</span>
+                    </div>
+                    <BookmarkButton initialBookmarked={false} />
+                    <div>
+                      <IconUpload size={16} stroke={1.5} className='cursor-pointer' />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Articles panel (empty) */}
+            <div className='w-[350px] shrink-0 pt-6'>
+              <div className='flex items-start'>
+                <img src='https://i.pinimg.com/1200x/25/ae/cb/25aecb24e0da22d3e1f07a7ed8f8d5f9.jpg' alt='moneshgoyal' className='w-10 h-10 rounded-full mr-4 shrink-0 object-cover bg-neutral-300 dark:bg-neutral-700' />
+                <div className='flex-1'>
+                  <div className='flex justify-between items-center'>
+                    <div className='flex items-center'>
+                      <p className='text-sm mr-1'>Suri Yaku</p>
+                      <IconRosetteDiscountCheckFilled size={15} className='mr-1 text-blue-500' />
+                      <p className='text-neutral-500 text-xs mr-2'>@yakusuri</p>
+                      <p className='text-xs text-neutral-500'>7h</p>
+                    </div>
+                    <HiOutlineDotsHorizontal className='cursor-pointer' />
+                  </div>
+                  <p className='text-sm leading-5 tracking-normal mt-4'>Just published a deep dive on design systems — why most teams build them too early, and what to do instead.</p>
+                  <div className='mt-3 rounded-xl border border-neutral-200 dark:border-neutral-700 overflow-hidden'>
+                    <img src='https://i.pinimg.com/736x/4b/82/a1/4b82a1019e25d32a95210ee208429fe6.jpg' alt='article preview' className='w-full h-28 object-cover' />
+                    <div className='px-3 py-2'>
+                      <p className='text-xs font-semibold text-neutral-800 dark:text-neutral-200 leading-4'>Design Systems Are Overrated (Until They&apos;re Not)</p>
+                      <p className='text-[11px] text-neutral-400 mt-0.5'>yakusuri.dev · 6 min read</p>
+                    </div>
+                  </div>
+                  <div className='flex items-center justify-between mt-3 text-neutral-500'>
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconMessage size={16} stroke={1.5} />
+                      <span className='text-xs'>16</span>
+                    </div>
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconRepeat size={16} stroke={1.5} />
+                      <span className='text-xs'>77</span>
+                    </div>
+                    <LikeButton count='895' />
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconChartBar size={16} stroke={1.5} />
+                      <span className='text-xs'>47K</span>
+                    </div>
+                    <BookmarkButton initialBookmarked={true} />
+                    <div>
+                      <IconUpload size={16} stroke={1.5} className='cursor-pointer' />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Likes panel */}
+            <div className='w-[350px] shrink-0 pt-6'>
+              <div className='flex items-start'>
+                <img src='https://i.pinimg.com/1200x/d4/f9/88/d4f988e65982d8111e0dfd8e538d977d.jpg' alt='karawilson' className='w-10 h-10 rounded-full mr-4 shrink-0 object-cover bg-neutral-300 dark:bg-neutral-700' />
+                <div className='flex-1'>
+                  <div className='flex justify-between items-center'>
+                    <div className='flex items-center'>
+                      <p className='text-sm mr-1'>Kara Wilson</p>
+                      <IconRosetteDiscountCheckFilled size={15} className='mr-1 text-yellow-400' />
+                      <p className='text-neutral-500 text-xs mr-2'>@karawilson</p>
+                      <p className='text-xs text-neutral-500'>2h</p>
+                    </div>
+                    <HiOutlineDotsHorizontal className='cursor-pointer' />
+                  </div>
+                  <p className='text-sm leading-5 tracking-normal mt-3'>CSS transitions are underrated. A 150ms ease-out on opacity and transform is the difference between an app that feels cheap and one that feels crafted.</p>
+                  <p className='text-sm leading-5 tracking-normal mt-3'>You don&apos;t need a library. You need taste.</p>
+                  <div className='flex items-center justify-between mt-3 text-neutral-500'>
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconMessage size={16} stroke={1.5} />
+                      <span className='text-xs'>31</span>
+                    </div>
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconRepeat size={16} stroke={1.5} />
+                      <span className='text-xs'>118</span>
+                    </div>
+                    <LikeButton count='1403' initialLiked={true} />
+                    <div className='flex items-center gap-1 cursor-pointer'>
+                      <IconChartBar size={16} stroke={1.5} />
+                      <span className='text-xs'>52K</span>
+                    </div>
+                    <BookmarkButton initialBookmarked={false} />
+                    <div>
+                      <IconUpload size={16} stroke={1.5} className='cursor-pointer' />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default TwitterTabsSwitchAnimation;
