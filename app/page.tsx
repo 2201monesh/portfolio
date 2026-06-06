@@ -20,53 +20,53 @@ export default function Home() {
   </div>
   <div className="mt-12 space-y-4 select-none">
     <div className="divide-y divide-neutral-100 dark:divide-neutral-800">
-      {/* <Link href="/crafts/progress-component" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Apr 29, 2026</p>
+      {/* <Link href="/crafts/progress-component" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Progress component</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Apr 29, 2026</p>
       </Link> */}
-      <Link href="/crafts/tab-toggling" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">June 2, 2026</p>
+      <Link href="/crafts/tab-toggling" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Tab toggling with micro animations</p>
+        <p className="shrink-0 ml-4 text-neutral-400">June 2, 2026</p>
       </Link>
-       <Link href="/crafts/folder-card-animation" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Apr 14, 2026</p>
+      <Link href="/crafts/folder-card-animation" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Folder card animation</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Apr 14, 2026</p>
       </Link>
-      <Link href="/crafts/motion-cards-component" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Apr 5, 2026</p>
+      <Link href="/crafts/motion-cards-component" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Motion cards component</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Apr 5, 2026</p>
       </Link>
-      <Link href="/crafts/discord-animation" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Mar 28, 2026</p>
+      <Link href="/crafts/discord-animation" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Discord Animation</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Mar 28, 2026</p>
       </Link>
-      <Link href="/crafts/combo-box-animation" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Jan 19, 2026</p>
+      <Link href="/crafts/combo-box-animation" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Combobox animation using Motion</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Jan 19, 2026</p>
       </Link>
-      <a href="https://x.com/moneshgoyal/status/2011431087982190724?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Jan 14, 2026</p>
+      <a href="https://x.com/moneshgoyal/status/2011431087982190724?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">MacOs inspired notification</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Jan 14, 2026</p>
       </a>
-      <a href="https://x.com/moneshgoyal/status/2008916255022145930?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Jan 7, 2026</p>
+      <a href="https://x.com/moneshgoyal/status/2008916255022145930?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Draggable List</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Jan 7, 2026</p>
       </a>
-      <a href="https://x.com/moneshgoyal/status/2001876074595258423?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Dec 19, 2025</p>
+      <a href="https://x.com/moneshgoyal/status/2001876074595258423?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Custom Animations</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Dec 19, 2025</p>
       </a>
-      <a href="https://x.com/moneshgoyal/status/2001702374025650447?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Dec 18, 2025</p>
+      <a href="https://x.com/moneshgoyal/status/2001702374025650447?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Text animation using Motion</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Dec 18, 2025</p>
       </a>
-      <a href="https://x.com/moneshgoyal/status/1999787935961604404?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Dec 13, 2025</p>
+      <a href="https://x.com/moneshgoyal/status/1999787935961604404?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Wallet + cards animation</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Dec 13, 2025</p>
       </a>
-      <a href="https://x.com/moneshgoyal/status/1998619458752098325?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-start py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
-        <p className="w-30 text-neutral-400">Dec 10, 2025</p>
+      <a href="https://x.com/moneshgoyal/status/1998619458752098325?s=20" target="_blank" rel="noopener noreferrer" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800">
         <p className="">Micro interactions for cards</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Dec 10, 2025</p>
       </a>
     </div>
   </div>
