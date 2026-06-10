@@ -6,6 +6,12 @@ import { useHoverHighlight } from "../components/HighlightWrapper";
 
 const crafts = [
   {
+    label: "card carousel",
+    href: "/crafts/card-carousel",
+    date: "Jun 8, 2026",
+    external: false,
+  },
+  {
     label: "tab toggling",
     href: "/crafts/tab-toggling",
     date: "Jun 3, 2026",

@@ -26,6 +26,10 @@ export default function Home() {
         <p className="">Progress component</p>
         <p className="shrink-0 ml-4 text-neutral-400">Apr 29, 2026</p>
       </Link> */}
+      <Link href="/crafts/card-carousel" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800" onMouseEnter={play}>
+        <p className="">Card carousel</p>
+        <p className="shrink-0 ml-4 text-neutral-400">Jun 8, 2026</p>
+      </Link>
       <Link href="/crafts/tab-toggling" className="flex cursor-pointer items-center justify-between py-2 text-sm hover:bg-neutral-50 dark:hover:bg-neutral-800" onMouseEnter={play}>
         <p className="">Tab toggling with micro animations</p>
         <p className="shrink-0 ml-4 text-neutral-400">June 2, 2026</p>
