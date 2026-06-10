@@ -349,7 +349,7 @@ const TweakpanePanel = ({
   return (
     <div
       ref={containerRef}
-      className="fixed bottom-6 right-6 z-50"
+      className="static ml-auto z-50 [@media(min-height:750px)]:fixed [@media(min-height:750px)]:ml-0 [@media(min-height:750px)]:mt-0 [@media(min-height:750px)]:bottom-6 [@media(min-height:750px)]:right-6 sm:fixed sm:ml-0 sm:mt-0 sm:bottom-6 sm:right-6"
       style={{ width: '260px' }}
     />
   )
