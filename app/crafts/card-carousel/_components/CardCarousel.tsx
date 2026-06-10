@@ -296,32 +296,32 @@ const TweakpanePanel = ({
       const { Pane } = await import('tweakpane')
       if (disposed || !containerRef.current) return
 
-      const pane = new Pane({ container: containerRef.current, title: 'Card Carousel' })
+      const pane = new Pane({ container: containerRef.current, title: 'Card Carousel' }) as any
       paneRef.current = pane
 
       pane.addBinding(params.current, 'autoRotate', { label: 'Auto Rotate' })
-        .on('change', ev => cbs.current.onAutoRotateChange(ev.value as boolean))
+        .on('change', (ev: any) => cbs.current.onAutoRotateChange(ev.value as boolean))
 
       pane.addBinding(params.current, 'rotateSpeed', { label: 'Speed', min: 5, max: 120, step: 5 })
-        .on('change', ev => cbs.current.onRotateSpeedChange(ev.value as number))
+        .on('change', (ev: any) => cbs.current.onRotateSpeedChange(ev.value as number))
 
       const controls = pane.addFolder({ title: 'Controls', expanded: true })
       controls.addBinding(params.current, 'opacity', { label: 'Opacity', min: 0.1, max: 1, step: 0.05 })
-        .on('change', ev => cbs.current.onOpacityChange(ev.value as number))
+        .on('change', (ev: any) => cbs.current.onOpacityChange(ev.value as number))
       controls.addBinding(params.current, 'spread', { label: 'Radius %', min: 0, max: 100, step: 1 })
-        .on('change', ev => cbs.current.onSpreadChange(ev.value as number))
+        .on('change', (ev: any) => cbs.current.onSpreadChange(ev.value as number))
       controls.addBinding(params.current, 'cardWidth', { label: 'Card Width', min: 80, max: 350, step: 1 })
-        .on('change', ev => cbs.current.onCardWidthChange(ev.value as number))
+        .on('change', (ev: any) => cbs.current.onCardWidthChange(ev.value as number))
       controls.addBinding(params.current, 'gap', { label: 'Gap', min: 0, max: 100, step: 1 })
-        .on('change', ev => cbs.current.onGapChange(ev.value as number))
+        .on('change', (ev: any) => cbs.current.onGapChange(ev.value as number))
 
       const rotationFolder = pane.addFolder({ title: 'Rotation', expanded: true })
       rotationFolder.addBinding(params.current, 'tiltX', { label: 'Rotate X', min: -90, max: 90, step: 1 })
-        .on('change', ev => cbs.current.onTiltXChange(ev.value as number))
+        .on('change', (ev: any) => cbs.current.onTiltXChange(ev.value as number))
       rotationFolder.addBinding(params.current, 'tiltY', { label: 'Rotate Y', min: -180, max: 180, step: 1 })
-        .on('change', ev => cbs.current.onTiltYChange(ev.value as number))
+        .on('change', (ev: any) => cbs.current.onTiltYChange(ev.value as number))
       rotationFolder.addBinding(params.current, 'tiltZ', { label: 'Rotate Z', min: -180, max: 180, step: 1 })
-        .on('change', ev => cbs.current.onTiltZChange(ev.value as number))
+        .on('change', (ev: any) => cbs.current.onTiltZChange(ev.value as number))
     }
 
     init()
